@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+
+        <title>{% block title %}blue analysis{% endblock %}</title>
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+            <link rel="stylesheet" href="http://getbootstrap.com/examples/dashboard/dashboard.css">
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.2.0/metisMenu.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/bs/jq-2.1.4,dt-1.10.10/datatables.min.css"/>
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+{#            <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">#}
+        {% endblock %}
+
+        <script type="text/javascript" src="https://cdn.datatables.net/s/bs/jq-2.1.4,dt-1.10.10/datatables.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('#dataTables').dataTable({
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+                    }
+                });
+            });
+        </script>
+        <script type="text/javascript"
+                src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" >
+        </script>
+
+        <script type="text/javascript" data-app-id="bQRVWNWnAdQ5vRFTr4Iaw"  src="https://c64.assets-yammer.com/assets/platform_js_sdk.js"></script>
+        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" >
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">BlueAnalytics by bluenove</a>
+                </div>
+                <div class=" collapse navbar-collapse ">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        {# <li><a href="{{ path('home') }}">Liste des utilisateurs</a></li>
+
+                         <li><a href="{{ path('home') }}">Mon profil</a></li>
+                         <li> <a href="{{ path('home') }}">Déconnexion</a>  </li>#}
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ul class="nav nav-sidebar">
+
+
+
+                        {# <li >
+                             <a href="{{ path('home') }}"><i class="glyphicon glyphicon-cog"></i> dddddd </a>
+                         </li>
+
+                         <li >
+                             <a href="{{ path('home') }}"><i class="glyphicon glyphicon-cog"></i> fffff </a>
+                         </li>
+#}
+
+
+                    </ul>
+
+                </div>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <h1 class="page-header">{% block pageHeader %}En construction{% endblock %}</h1>
+                    {% block body %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+
+        {% block javascripts %}
+            {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+            {#            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>#}
+
+            {% javascripts '@PlatformBundle/Resources/public/js/*' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+
+
+            <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+            <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+            {#TODO: rendre plus prope#}
+            <script src="http://jquery-ui.googlecode.com/svn/tags/1.8.20/ui/i18n/jquery.ui.datepicker-fr.js"></script>
+
+            <script src="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.2.0/metisMenu.min.js"></script>
+            <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>
+            <script src="https://cdn.datatables.net/responsive/2.0.0/js/dataTables.responsive.min.js"></script>
+
+{#            <script src="//code.highcharts.com/4.1.8/highcharts.js"></script>#}
+{#            <script src="//code.highcharts.com/4.1.8/modules/exporting.js"></script>#}
+
+
+        {% endblock %}
+
+    </body>
+</html>

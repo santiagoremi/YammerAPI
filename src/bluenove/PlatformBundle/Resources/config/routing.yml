@@ -1,0 +1,9 @@
+
+    
+
+bluenove_platform:
+    resource: "@bluenovePlatformBundle/Controller/"
+    type:     annotation
+    prefix:   /
+    
+

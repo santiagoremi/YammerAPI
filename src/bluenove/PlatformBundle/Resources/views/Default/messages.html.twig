@@ -1,0 +1,42 @@
+
+{% extends '::layout.html.twig' %}
+
+{% block body -%}
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table id="dataTables" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>date réception </th>
+                        <th>body</th>
+                        <th>Link</th>
+                        <th>Id</th>
+                        <th>users</th>
+                        <th>nbCom</th>
+                        <th>nbLikes</th>
+                        <th>groupe</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for message in messages %}
+                        <tr class="{{ cycle(['odd', 'even'], loop.index0) }} gradeX">
+                            <td><span class="hide">{{message.dateReception|date('Y-m-d H:i:s')}} - </span>{{ message.dateReception|date('d/m/y ') }}</td>
+                            <td>{{ message.body }}</td>
+                            <td>{{ message.link }}</td>
+                            <td>{{message.messagesId}}</td>
+                            <td>{{ message.Users.name }}</td>
+                            <td><a class="pure-button" href="{{ path('display_comments_by_message', { 'message_id': message.messagesId }) }}">{{message.nbCom}}</a></td>
+                            <td>{{ message.nbLikes}}</td>
+                            <td>{{message.Groupe.name}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {#        {{dump(test)}}#}
+
+    </div>
+{% endblock %}
+

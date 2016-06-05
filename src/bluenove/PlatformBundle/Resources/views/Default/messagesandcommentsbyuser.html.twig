@@ -1,0 +1,34 @@
+
+{% extends '::layout.html.twig' %}
+
+{% block body -%}
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table id="dataTables" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Date réception </th>
+                        <th>Body</th>
+                        <th>Message Link</th>
+                        <th>Nb Likes</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tab in tabs %}
+                        <tr class="{{ cycle(['odd', 'even'], loop.index0) }} gradeX">
+                            <td><span class="hide">{{tab.dateReception|date('Y-m-d H:i:s')}} - </span>{{ tab.dateReception|date('d/m/y ') }}</td>
+                            <td>{{ tab.body }}</td>
+                            <td>{{ tab.link }}</td>
+                            <td>{{ tab.nbLikes}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {#        {{dump(test)}}#}
+
+    </div>
+{% endblock %}
+

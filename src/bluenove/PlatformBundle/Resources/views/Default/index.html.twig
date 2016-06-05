@@ -1,0 +1,37 @@
+{% extends '::layout.html.twig' %}
+{% block body -%}
+    Hello World!
+    <script>
+        yam.connect.loginButton('#yammer-login', function (resp) {
+            if (resp.authResponse) {
+                document.getElementById('yammer-login').innerHTML = 'Welcome to Yammer!';
+            }
+        });
+    </script>
+    <hr>
+    <span id="yammer-login"></span>
+    <hr>
+    <form name="myForm" method="get" action="">
+        <table cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td align="right"></td>
+                <td><input type="button" value="Get Analytics" onclick ="getUsersRatp()" /></td>
+                 {#<td align="right"></td>
+                <td><input type="button" value="Get Analytics" onclick ="getGroupesRatp()" /></td>#}
+            </tr>
+        </table>
+    </form>
+    <div id="target">
+    </div>
+    <div>
+        <a class="btn  btn-sm btn-primary btn-block" href="{{ path('display_groupes') }}">Display Groups</a>
+    </div>
+   {#<div>
+
+        <a class="btn  btn-sm btn-primary btn-block" href="{{ path('display_messages') }}">Display Messages</a>
+
+    </div>#}
+   
+
+{% endblock %}
+

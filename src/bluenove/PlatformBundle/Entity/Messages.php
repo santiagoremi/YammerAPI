@@ -1,0 +1,327 @@
+<?php
+
+namespace bluenove\PlatformBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Messages
+ *
+ * @ORM\Table(name="messages")
+ * @ORM\Entity(repositoryClass="bluenove\PlatformBundle\Repository\MessagesRepository")
+ */
+class Messages {
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="messagesId", type="integer", unique=true)
+     */
+    private $messagesId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="body", type="string", unique= false, nullable=false)
+     */
+    private $body;
+    
+     /**
+     * @var datetime
+     *
+     * @ORM\Column(name="date_reception", type="datetime",unique=false, nullable=true)
+     */
+    private $dateReception;
+    
+       /**
+     * @var int
+     *
+     * @ORM\Column(name="nbr_com", type="integer", unique=false, nullable=true)
+     */
+    private $nbCom;
+    
+        /**
+     * @var int
+     *
+     * @ORM\Column(name="nbr_likes", type="integer", unique=false, nullable=true)
+     */
+    private $nbLikes;
+       /**
+     * @var string
+     *
+     * @ORM\Column(name="link", type="string", unique=false, nullable=true)
+     */
+    private $link;
+    
+
+    /**
+     * @ORM\ManyToOne(targetEntity="bluenove\PlatformBundle\Entity\Users",  cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $Users;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="bluenove\PlatformBundle\Entity\Groupe",  cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $Groupe;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * Set messagesId
+     *
+     * @param integer $messagesId
+     *
+     * @return Messages
+     */
+    public function setMessagesId($messagesId) {
+        $this->messagesId = $messagesId;
+
+        return $this;
+    }
+
+    /**
+     * Get messagesId
+     *
+     * @return int
+     */
+    public function getMessagesId() {
+        return $this->messagesId;
+    }
+
+    /**
+     * Set body
+     *
+     * @param string $body
+     *
+     * @return Messages
+     */
+    public function setBody($body) {
+        $this->body = $body;
+
+        return $this;
+    }
+
+    /**
+     * Get body
+     *
+     * @return string
+     */
+    public function getBody() {
+        return $this->body;
+    }
+
+ 
+
+
+    /**
+     * Set users
+     *
+     * @param \bluenove\PlatformBundle\Entity\Users $users
+     *
+     * @return Messages
+     */
+    public function setUsers(\bluenove\PlatformBundle\Entity\Users $users)
+    {
+        $this->Users = $users;
+
+        return $this;
+    }
+
+    /**
+     * Get users
+     *
+     * @return \bluenove\PlatformBundle\Entity\Users
+     */
+    public function getUsers()
+    {
+        return $this->Users;
+    }
+
+    /**
+     * Set groupe
+     *
+     * @param \bluenove\PlatformBundle\Entity\Groupe $groupe
+     *
+     * @return Messages
+     */
+    public function setGroupe(\bluenove\PlatformBundle\Entity\Groupe $groupe)
+    {
+        $this->Groupe = $groupe;
+
+        return $this;
+    }
+
+    /**
+     * Get groupe
+     *
+     * @return \bluenove\PlatformBundle\Entity\Groupe
+     */
+    public function getGroupe()
+    {
+        return $this->Groupe;
+    }
+
+    
+
+    /**
+     * Set dateReception
+     *
+     * @param \DateTime $dateReception
+     *
+     * @return Messages
+     */
+    public function setDateReception($dateReception)
+    {
+        $this->dateReception = $dateReception;
+
+        return $this;
+    }
+
+    /**
+     * Get dateReception
+     *
+     * @return \DateTime
+     */
+    public function getDateReception()
+    {
+        return $this->dateReception;
+    }
+
+    /**
+     * Set nbUsers
+     *
+     * @param integer $nbUsers
+     *
+     * @return Messages
+     */
+    public function setNbUsers($nbUsers)
+    {
+        $this->nbUsers = $nbUsers;
+
+        return $this;
+    }
+
+    /**
+     * Get nbUsers
+     *
+     * @return integer
+     */
+    public function getNbUsers()
+    {
+        return $this->nbUsers;
+    }
+
+    /**
+     * Set nbCom
+     *
+     * @param integer $nbCom
+     *
+     * @return Messages
+     */
+    public function setNbCom($nbCom)
+    {
+        $this->nbCom = $nbCom;
+
+        return $this;
+    }
+
+    /**
+     * Get nbCom
+     *
+     * @return integer
+     */
+    public function getNbCom()
+    {
+        return $this->nbCom;
+    }
+
+    /**
+     * Set link
+     *
+     * @param string $link
+     *
+     * @return Messages
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+
+    /**
+     * Get link
+     *
+     * @return string
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * Set likes
+     *
+     * @param integer $likes
+     *
+     * @return Messages
+     */
+    public function setLikes($likes)
+    {
+        $this->likes = $likes;
+
+        return $this;
+    }
+
+    /**
+     * Get likes
+     *
+     * @return integer
+     */
+    public function getLikes()
+    {
+        return $this->likes;
+    }
+
+    /**
+     * Set nbLikes
+     *
+     * @param integer $nbLikes
+     *
+     * @return Messages
+     */
+    public function setNbLikes($nbLikes)
+    {
+        $this->nbLikes = $nbLikes;
+
+        return $this;
+    }
+
+    /**
+     * Get nbLikes
+     *
+     * @return integer
+     */
+    public function getNbLikes()
+    {
+        return $this->nbLikes;
+    }
+}
