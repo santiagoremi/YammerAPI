@@ -262,6 +262,7 @@ class MessageController extends Controller {
             $em->flush();
         }
 
+        
         if ($Commentaires) {
             foreach ($Commentaires as $commentaire) {
                 $commentaire->setNbLikes(0);
