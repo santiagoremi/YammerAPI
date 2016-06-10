@@ -163,7 +163,7 @@ class UserController extends Controller {
     /**
      * twig
      *
-     * @Route("/userbydate", name="user_by_date")
+     * @Route("users/usersbydate", name="user_by_date")
      *  @Method ("POST")
      */
     public function summaryUserByDateAction(Request $request) {

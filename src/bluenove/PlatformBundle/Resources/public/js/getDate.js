@@ -18,7 +18,9 @@ function getDate(groupe_id) {
 
     $.ajax({
         type: 'POST',
-        url: Routing.generate('summary_groupe_by_date', {groupe_id: groupe_id}),
+//        /summarygroupbydate/{groupe_id}
+        url: 'http://localhost/ExportApiYammer/web/app_dev.php/summarygroupbydate/' + groupe_id,
+//        url: Routing.generate('summary_groupe_by_date', {groupe_id: groupe_id}),
         contentType: 'application/json',
         data: JSON.stringify(date),
         datatype: "json"

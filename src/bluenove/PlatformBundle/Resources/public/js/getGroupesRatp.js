@@ -33,17 +33,18 @@ function getGroupesRatp() {
                                     console.log(j);
 
                                     j++;
-                                    
+
                                     for (var i = 0; i < groups.length; i++) {
                                         groups_tab.push(groups[i]);
                                     }
-                                    
+
                                     var object = JSON.stringify(groups);
                                     console.log(groups_tab);
 
                                     $.ajax({
                                         type: 'POST',
-                                        url: Routing.generate('load_groupes'),
+                                        url: 'http://localhost/ExportApiYammer/web/app_dev.php/groupes',
+//                                        url: Routing.generate('load_groupes'),
                                         contentType: 'application/json',
                                         data: object,
                                         datatype: "json",

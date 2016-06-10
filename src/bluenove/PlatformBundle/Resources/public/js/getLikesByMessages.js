@@ -42,15 +42,16 @@ function getLikesByMessages(messages) {
                                 if (object) {
                                     $.ajax({
                                         type: 'POST',
-                                        url: Routing.generate('load_likes', {messages_id: messages[i]}),
-                                        contentType: 'application/json',
+                                        url: 'http://localhost/ExportApiYammer/web/app_dev.php/likes/' + messages[i],
+//                                        url: Routing.generate('load_likes', {messages_id: messages[i]}),
+                                                contentType: 'application/json',
                                         data: JSON.stringify(object),
                                         datatype: "json"
 
                                     });
                                 }
 
-                                var len = messages.length-1;
+                                var len = messages.length - 1;
 
                                 console.log(i);
 

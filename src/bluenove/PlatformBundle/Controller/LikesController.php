@@ -44,7 +44,7 @@ class LikesController extends Controller {
     /**
      * twig
      *
-     * @Route("/likes", name="load_likes")
+     * @Route("/likes/{messages_id}", name="load_likes")
      * @Method ("POST")
      */
     public function loadLikesaction(Request $request) {

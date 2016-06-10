@@ -37,7 +37,7 @@ function getUsersRatp() {
 
                                     $.ajax({
                                         type: 'POST',
-                                        url: Routing.generate('load_users'),
+                                        url: 'http://localhost/ExportApiYammer/web/app_dev.php/users',
                                         contentType: 'application/json',
                                         data: object,
                                         datatype: "json",
@@ -56,7 +56,7 @@ function getUsersRatp() {
                                 alert("There was an error with the request.");
                             }
                         });
-                    }, 3500);
+                    }, 4500);
                 }
             });
 }

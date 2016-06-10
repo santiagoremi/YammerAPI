@@ -15,21 +15,22 @@ function getMessages() {
                         method: "GET",
                         data: {//use the data object literal to specify parameters, as documented in the REST API section of this developer site
                             "threaded": "true",
-                            "limit":"100"
-                            
+                            "limit": "100"
+
                         },
                         success: function (messages) { //print message response information to the console
                             alert("The request was successful.");
                             console.dir(messages);
-                            
-                            
-                             var object = JSON.stringify(messages);
+
+
+                            var object = JSON.stringify(messages);
 
 
                             $.ajax({
                                 type: 'POST',
-                                url: Routing.generate('load_messages'),
-                                contentType: 'application/json',
+                                url: 'http://localhost/ExportApiYammer/web/app_dev.php/messages',
+//                                url: Routing.generate('load_messages'),
+                                        contentType: 'application/json',
                                 data: object,
                                 datatype: "json",
                                 complete: function (object) {

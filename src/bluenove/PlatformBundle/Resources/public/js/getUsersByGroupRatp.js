@@ -42,8 +42,9 @@ function getUsersByGroupRatp(group_id) {
                                 if (object) {
                                     $.ajax({
                                         type: 'POST',
-                                        url: Routing.generate('load_users_by_groupes', {group_id: group_id}),
-                                        contentType: 'application/json',
+                                        url: 'http://localhost/ExportApiYammer/web/app_dev.php/users/' + group_id,
+//                                        url: Routing.generate('load_users_by_groupes', {group_id: group_id}),
+                                                contentType: 'application/json',
                                         data: JSON.stringify(object),
                                         datatype: "json"
 

@@ -18,7 +18,8 @@ function getDateUser() {
 
     $.ajax({
         type: 'POST',
-        url: Routing.generate('user_by_date'),
+        url: 'http://localhost/ExportApiYammer/web/app_dev.php/users/usersbydate',
+//        url: Routing.generate('user_by_date'),
         contentType: 'application/json',
         data: JSON.stringify(date),
         datatype: "json"

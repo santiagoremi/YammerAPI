@@ -196,7 +196,7 @@ class GroupeController extends Controller {
     /**
      * twig
      *
-     * @Route("/summarygroupbydate", name="summary_groupe_by_date")
+     * @Route("/summarygroupbydate/{groupe_id}", name="summary_groupe_by_date")
      *  @Method ("POST")
      */
     public function summaryGroupByDateAction(Request $request) {
