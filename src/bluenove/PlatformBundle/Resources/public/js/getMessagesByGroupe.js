@@ -39,7 +39,7 @@ function getMessagesByGroupe(group_id) {
                             console.log(older);
                             $.ajax({
                                 type: 'POST',
-                                url: 'http://localhost/ExportApiYammer/web/app_dev.php/messages',
+                                url: 'http://localhost/YammerAPI/web/app_dev.php/messages',
 //                                url: Routing.generate('load_messages'),
                                 contentType: 'application/json',
                                 data: JSON.stringify(object),
@@ -77,7 +77,7 @@ function getMessagesByGroupe(group_id) {
                                             console.log(older);
                                             $.ajax({
                                                 type: 'POST',
-                                                url: 'http://localhost/ExportApiYammer/web/app_dev.php/messages',
+                                                url: 'http://localhost/YammerAPI/web/app_dev.php/messages',
                                                 contentType: 'application/json',
                                                 data: JSON.stringify(object),
                                                 datatype: "json"
@@ -114,7 +114,7 @@ function getMessagesByGroupe(group_id) {
                                                             if (object) {
                                                                 $.ajax({
                                                                     type: 'POST',
-                                                                    url: 'http://localhost/ExportApiYammer/web/app_dev.php/likes/' + tab[i],
+                                                                    url: 'http://localhost/YammerAPI/web/app_dev.php/likes/' + tab[i],
 //                                                                    url: Routing.generate('load_likes', {messages_id: tab[i]}),
                                                                     contentType: 'application/json',
                                                                     data: JSON.stringify(object),
@@ -178,7 +178,7 @@ function getMessagesByGroupe(group_id) {
                                                 if (object) {
                                                     $.ajax({
                                                         type: 'POST',
-                                                        url: 'http://localhost/ExportApiYammer/web/app_dev.php/likes/' + tab[i],
+                                                        url: 'http://localhost/YammerAPI/web/app_dev.php/likes/' + tab[i],
                                                         contentType: 'application/json',
                                                         data: JSON.stringify(object),
                                                         datatype: "json"

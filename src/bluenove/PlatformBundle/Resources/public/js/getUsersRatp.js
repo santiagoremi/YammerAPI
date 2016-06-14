@@ -37,7 +37,7 @@ function getUsersRatp() {
 
                                     $.ajax({
                                         type: 'POST',
-                                        url: 'http://localhost/ExportApiYammer/web/app_dev.php/users',
+                                        url: 'http://localhost/YammerAPI/web/app_dev.php/users',
                                         contentType: 'application/json',
                                         data: object,
                                         datatype: "json",

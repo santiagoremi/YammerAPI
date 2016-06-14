@@ -42,7 +42,7 @@ function getLikesByMessages(messages) {
                                 if (object) {
                                     $.ajax({
                                         type: 'POST',
-                                        url: 'http://localhost/ExportApiYammer/web/app_dev.php/likes/' + messages[i],
+                                        url: 'http://localhost/YammerAPI/web/app_dev.php/likes/' + messages[i],
 //                                        url: Routing.generate('load_likes', {messages_id: messages[i]}),
                                                 contentType: 'application/json',
                                         data: JSON.stringify(object),

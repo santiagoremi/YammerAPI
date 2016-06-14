@@ -28,7 +28,7 @@ function getMessages() {
 
                             $.ajax({
                                 type: 'POST',
-                                url: 'http://localhost/ExportApiYammer/web/app_dev.php/messages',
+                                url: 'http://localhost/YammerAPI/web/app_dev.php/messages',
 //                                url: Routing.generate('load_messages'),
                                         contentType: 'application/json',
                                 data: object,

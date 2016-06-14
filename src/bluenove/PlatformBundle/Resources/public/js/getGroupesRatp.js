@@ -43,7 +43,7 @@ function getGroupesRatp() {
 
                                     $.ajax({
                                         type: 'POST',
-                                        url: 'http://localhost/ExportApiYammer/web/app_dev.php/groupes',
+                                        url: 'http://localhost/YammerAPI/web/app_dev.php/groupes',
 //                                        url: Routing.generate('load_groupes'),
                                         contentType: 'application/json',
                                         data: object,
